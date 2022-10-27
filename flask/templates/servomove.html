@@ -1,0 +1,58 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+  $(function() {
+    $('a#left').on('click', function() {
+      $.getJSON('/moveleft', {
+        movelr: $('#movelr').text()
+      }, function(data) {
+        $("#movelr").text(data.movelr);
+      });
+      return false;
+    });
+  });
+  $(function() {
+    $('a#right').on('click', function() {
+      $.getJSON('/moveright', {
+        movelr: $('#movelr').text()
+      }, function(data) {
+        $("#movelr").text(data.movelr);
+      });
+      return false;
+    });
+  });
+  $(function() {
+    $('a#up').on('click', function() {
+      $.getJSON('/moveup', {
+        moveud: $('#moveud').text()
+      }, function(data) {
+        $("#moveud").text(data.moveud);
+      });
+      return false;
+    });
+  });
+  $(function() {
+    $('a#down').on('click', function() {
+      $.getJSON('/movedown', {
+        moveud: $('#moveud').text()
+      }, function(data) {
+        $("#moveud").text(data.moveud);
+      });
+      return false;
+    });
+  });
+</script>
+<h1>jQuery Example</h1>
+<div>
+  <p>Move Left-Right</p>
+  <p><a href=# id=left> << </a>
+  <span id=movelr>10</span>
+  <a href=# id=right> >> </a>
+</div>
+
+<div>
+  <p>Move Up-Down</p>
+  <p><a href=# id=up> << </a>
+  <span id=moveud>10</span>
+  <a href=# id=down> >> </a>
+</div>
+

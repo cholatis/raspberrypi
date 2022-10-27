@@ -1,0 +1,30 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+  $(function() {
+    $('a#left').on('click', function() {
+      $.getJSON('/moveleft', {
+        movelr: $('#movelr').text()
+      }, function(data) {
+        $("#movelr").text(data.movelr);
+      });
+      return false;
+    });
+  });
+  $(function() {
+    $('a#right').on('click', function() {
+      $.getJSON('/moveright', {
+        movelr: $('#movelr').text()
+      }, function(data) {
+        $("#movelr").text(data.movelr);
+      });
+      return false;
+    });
+  });
+</script>
+<h1>jQuery Example</h1>
+<p><a href=# id=left> << </a>
+<p><span id=movelr>10</span>
+<p><a href=# id=right> >> </a>
+
+
+
